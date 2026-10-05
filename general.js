@@ -24,8 +24,16 @@ function draw() {
     translate(gearslist[i].progx, gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))));
     rotate((gearslist[i].position * 45) + sin((frameCount/2.1 + 90)+(i*72)));
   image(gearslist[i].file, 0, 0, gearslist[i].progdia, gearslist[i].progdia);
-    pop();
+  pop();
+  for (let j = 0; j < gearslist[i].slots.length; j++) {
+    gearslist[i].slots[j].position = j + gearslist[i].position
+    gearslist[i].slots[j].w = gearslist[i].progdia / 5
+    gearslist[i].slots[j].h = gearslist[i].progdia*5.6 / 20
+    gearslist[i].slots[j].x = (gearslist[i].progdia / 2) * cos((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progx)
+    gearslist[i].slots[j].y = (gearslist[i].progdia / 2) * sin((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))))
+    image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
   }
+}
 }
 
 function drawBG() {
@@ -69,7 +77,7 @@ function gearsMakeSound() {
 
 function positionGear() {
   for (let i = 0; i < gearslist.length; i++) {
-  gearslist[i].dia = 105 * Wper / (gearslist.length + 2)
+  gearslist[i].dia = 95 * Wper / (gearslist.length + 2)
   gearslist[i].x = (100/(gearslist.length+1))*(i+1) * Wper
   if (gearslist[i].progdia < (gearslist[i].dia - (1 * Wper))) {
     gearslist[i].progdia += ((gearslist[i].dia - gearslist[i].progdia) / 10) + Wper / 2

@@ -31,7 +31,9 @@ async function setup() {
   gsnd123 = floor(random(1,4));
 
   
-// Tried to do this stuff with a for loop, but use of loading things in a for loop makes it return an error because it thinks it's an infinite loop
+// Tried to do this stuff with a for loop,
+// but use of loading things in a for loop makes it return an error
+// because it thinks it's an infinite loop
   let t1_a = await loadSound("/assets/Sounds/Gearturn1.mp3");
   let t1_b = await loadSound("/assets/Sounds/Gearturn1.mp3");
   let t1_c = await loadSound("/assets/Sounds/Gearturn1.mp3");
