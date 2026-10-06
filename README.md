@@ -12,8 +12,8 @@ simulator with a LOT of foundational code.
 [Play the current version here](https://strange-system.github.io/Gear-Game/)
 
 The current placeholder controls are:
-click to rotate the gear
-Press r to add another one.
+ - Click to rotate the gear.
+ - Press R to add another one.
 
 ## Development Narrative
 
