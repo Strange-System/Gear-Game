@@ -7,6 +7,10 @@
 One day, it will be a roguelike deckbuilder with gears used as a playmat. Currently, it's just a fancy gear
 simulator with a LOT of foundational code.
 
+## Playable Build
+
+[Play the current version here](https://strange-system.github.io/Gear-Game/)
+
 ## Development Narrative
 
 My project starts as something I know I cannot achieve. An idea I’ve had for quite a while. A 
