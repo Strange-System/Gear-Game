@@ -25,8 +25,8 @@ async function setup() {
   imageMode(CENTER);
   Wper = width / 100;
   Hper = height / 100;
-  GEARIMAGE = await loadImage("/assets/Gear.png");
-  EMPTYSLOT = await loadImage("/assets/Cards/Layout.png");
+  GEARIMAGE = await loadImage("./assets/Gear.png");
+  EMPTYSLOT = await loadImage("./assets/Cards/Layout.png");
 
   gsnd123 = floor(random(1,4));
 
@@ -34,17 +34,18 @@ async function setup() {
 // Tried to do this stuff with a for loop,
 // but use of loading things in a for loop makes it return an error
 // because it thinks it's an infinite loop
-  let t1_a = await loadSound("/assets/Sounds/Gearturn1.mp3");
-  let t1_b = await loadSound("/assets/Sounds/Gearturn1.mp3");
-  let t1_c = await loadSound("/assets/Sounds/Gearturn1.mp3");
+// Well, in js p5 web, it did. I'll come back to this and see if that's not a problem anymore for github and vscode.
+  let t1_a = await loadSound("./assets/Sounds/Gearturn1.mp3");
+  let t1_b = await loadSound("./assets/Sounds/Gearturn1.mp3");
+  let t1_c = await loadSound("./assets/Sounds/Gearturn1.mp3");
 // Loading three copies to prevent cutting to repeat
-  let t2_a = await loadSound("/assets/Sounds/Gearturn2.mp3");
-  let t2_b = await loadSound("/assets/Sounds/Gearturn2.mp3");
-  let t2_c = await loadSound("/assets/Sounds/Gearturn2.mp3");
+  let t2_a = await loadSound("./assets/Sounds/Gearturn2.mp3");
+  let t2_b = await loadSound("./assets/Sounds/Gearturn2.mp3");
+  let t2_c = await loadSound("./assets/Sounds/Gearturn2.mp3");
 
-  let t3_a = await loadSound("/assets/Sounds/Gearturn3.mp3");
-  let t3_b = await loadSound("/assets/Sounds/Gearturn3.mp3");
-  let t3_c = await loadSound("/assets/Sounds/Gearturn3.mp3");
+  let t3_a = await loadSound("./assets/Sounds/Gearturn3.mp3");
+  let t3_b = await loadSound("./assets/Sounds/Gearturn3.mp3");
+  let t3_c = await loadSound("./assets/Sounds/Gearturn3.mp3");
     
   t1_a.amp(0.4); t1_b.amp(0.4); t1_c.amp(0.4);
   t2_a.amp(0.55); t2_b.amp(0.55); t2_c.amp(0.55);

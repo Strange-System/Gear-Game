@@ -4,7 +4,7 @@ function draw() {
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++
-  if (mouseIsPressed && gearslist[i].position % 1 === 0) {
+  if (mouseIsPressed && gearslist[i].position % 1 === 0) { // This ideally would have gone in temporary.js, but the only temporary part of it is tied to the rest. The temporary thing is clicking to make the gears turn. There will be another trigger later on.
     gearslist[i].position += (1 / 105)
     gearslist[i].rotanimcount = 0
   }
