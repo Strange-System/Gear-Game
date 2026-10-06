@@ -11,6 +11,10 @@ simulator with a LOT of foundational code.
 
 [Play the current version here](https://strange-system.github.io/Gear-Game/)
 
+The current placeholder controls are:
+click to rotate the gear
+Press r to add another one.
+
 ## Development Narrative
 
 My project starts as something I know I cannot achieve. An idea I’ve had for quite a while. A 
@@ -38,7 +42,9 @@ while not rotating in of themselves. I asked for help, and took their suggestion
 made a concluding work that was somewhere between their own ideas and what I encountered along the way.
 My solution, each gear object includes a variable that holds a list of 8 "slot" objects. Each slot object defines
 its position on the gear through its position in the list combined with the x and y of the gear, and the rotation
-of the gear, defined with a "position" variable that describes its rotation on a scale of 0-7. Essentially, the
+of the gear itself. The slots' own "pos" variables are currently unused, this variable will be used to measure
+which of the gear's 8 prongs it's on in a more visual sense, disregarding the gear's angle and instead considering
+the actual functional position, for purposes of card interactions with the slots. Essentially, the
 information of the slot's position is defined first, and then created in its own, unrotated coordinate grid.
 
 Though it’s not hugely relevant, I thought it worth mentioning how I was caught quite off guard 
