@@ -42,8 +42,8 @@ async function setup() {
   imageMode(CENTER);
   Wper = width / 100;
   Hper = height / 100;
-  GEARIMAGE = await loadImage("/assets/Gear.png");
-  EMPTYSLOT = await loadImage("/assets/Cards/Layout.png");
+  GEARIMAGE = await loadImage("./assets/Gear.png");
+  EMPTYSLOT = await loadImage("./assets/Cards/Layout.png");
 
   gsnd123 = floor(random(1,4));
 
@@ -61,9 +61,9 @@ async function setup() {
   let t2_b = await loadSound("/assets/Sounds/Gearturn2.mp3");
   let t2_c = await loadSound("/assets/Sounds/Gearturn2.mp3");
 
-  let t3_a = await loadSound("/assets/Sounds/Gearturn3.mp3");
-  let t3_b = await loadSound("/assets/Sounds/Gearturn3.mp3");
-  let t3_c = await loadSound("/assets/Sounds/Gearturn3.mp3");
+  let t3_a = await loadSound("./assets/Sounds/Gearturn3.mp3");
+  let t3_b = await loadSound("./assets/Sounds/Gearturn3.mp3");
+  let t3_c = await loadSound("./assets/Sounds/Gearturn3.mp3");
     
   t1_a.amp(0.4); t1_b.amp(0.4); t1_c.amp(0.4);
   t2_a.amp(0.55); t2_b.amp(0.55); t2_c.amp(0.55);

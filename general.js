@@ -5,11 +5,15 @@ function draw() {
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++
+<<<<<<< HEAD
   // this is something I would hope to put in temporary.js, but 
   // it's built in so I can't.
   // mouseIsPressed is going to be replaced with the "end of turn" condition
   // that will be added later.
   if (mouseIsPressed && gearslist[i].position % 1 === 0) {
+=======
+  if (mouseIsPressed && gearslist[i].position % 1 === 0) { // This ideally would have gone in temporary.js, but the only temporary part of it is tied to the rest. The temporary thing is clicking to make the gears turn. There will be another trigger later on.
+>>>>>>> 7aec43e2b0e725eb0aa5358205992206daa09961
     gearslist[i].position += (1 / 105)
     gearslist[i].rotanimcount = 0
   }
