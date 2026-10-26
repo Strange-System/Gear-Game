@@ -9,7 +9,7 @@ simulator with a LOT of foundational code.
 
 ## Playable Build
 
-[Play the current version here](https://strange-system.github.io/Gear-Game/)
+[Play the current version here](http://127.0.0.1:5500)
 
 The current placeholder controls are:
  - Click to rotate the gear.
