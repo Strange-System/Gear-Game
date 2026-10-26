@@ -126,3 +126,16 @@ function positionGear() {
   }
   }
 }
+
+// TODO: add a hand of cards. Make it so if you click a card in your hand,
+// clicking a slot moves the card into the slot and places it there.
+// Make a variable in the slots in makegears.js that measures the card within.
+
+// TODO: make it so a right click on a card displays the card so you can read what it does.
+
+// TODO: make a deck, discard, and hand system, to measure cards no matter where they are,
+// and to lay the groundwork to allow you to build a deck as you go.
+
+// TODO: add a turn system, so that instead of rotating all at once on click, the gears
+// rotate in order equal to their rotation/turn count at the end of turn before
+// increasing their energy capacity. 

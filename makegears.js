@@ -27,6 +27,14 @@ function makeGear() {
     progdia: 0,
     slots: [],
     // A list that will contain 8 slots.
+
+    // TODO: make variables for the gear's information on energy capacity and slots per turn.
+    // Create a visual at the center of the gear for this.
+    // Make it so at the end of each turn, the gear rotates X times where X is
+    // the number of rotations/turn in the variable.
+    // At the end of each turn, increase energy capacity by 25. If base capacity is 100,
+    // Add a new gear with 25 capacity instead.
+    // Add a variable for energy in use.
 };
   gear.y = 50 * Hper
   // This literally says "The gear is 50% down the screen"
