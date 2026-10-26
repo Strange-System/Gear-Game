@@ -1,9 +1,14 @@
 function draw() {
   drawBG()
   if (!gearslist[0].file) {return}
+  // If the gear image hasn't loaded yet everything explodes :( so this line fixes that
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++
+  // this is something I would hope to put in temporary.js, but 
+  // it's built in so I can't.
+  // mouseIsPressed is going to be replaced with the "end of turn" condition
+  // that will be added later.
   if (mouseIsPressed && gearslist[i].position % 1 === 0) {
     gearslist[i].position += (1 / 105)
     gearslist[i].rotanimcount = 0
@@ -20,11 +25,13 @@ function draw() {
       }
     gearslist[i].rotanimcount++
     }
+    // This stuff here is for passive movement
     push();
     translate(gearslist[i].progx, gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))));
     rotate((gearslist[i].position * 45) + sin((frameCount/2.1 + 90)+(i*72)));
   image(gearslist[i].file, 0, 0, gearslist[i].progdia, gearslist[i].progdia);
   pop();
+    // And this is to make it move logarithmically to its intended location.
   for (let j = 0; j < gearslist[i].slots.length; j++) {
     gearslist[i].slots[j].position = j + gearslist[i].position
     gearslist[i].slots[j].w = gearslist[i].progdia / 5
@@ -37,6 +44,7 @@ function draw() {
 }
 
 function drawBG() {
+  // This all makes a changing gradient background. This is likely going to be changed.
   push()
   noStroke()
   const BottomGray = color(11, 11, 11)
@@ -58,7 +66,7 @@ function drawBG() {
 }
 
 function gearsMakeSound() {
-
+  // Plays a random sound without repetition.
   if (gsnd123 === 3) {
         GearSounds.turn1[GearSounds.idx1].play();
         GearSounds.idx1 = (GearSounds.idx1 + 1) % GearSounds.turn1.length;
@@ -79,6 +87,18 @@ function positionGear() {
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].dia = 95 * Wper / (gearslist.length + 2)
   gearslist[i].x = (100/(gearslist.length+1))*(i+1) * Wper
+  // this part is the most fundamental. It decides how big a gear SHOULD be,
+  // and where it should be, based on how many there are and which of that list
+  // this gear is.
+
+  // Everything below in this function is wacky.
+  // I did not yet know about the lerp function when I made this.
+  // So basically I made a really messy way to create
+  // a logarithmic progression of movement.
+  // x and y and dia are what those things SHOULD be.
+  // progx, progy, and progdia are what those things ARE.
+
+  // This is the dia one.
   if (gearslist[i].progdia < (gearslist[i].dia - (1 * Wper))) {
     gearslist[i].progdia += ((gearslist[i].dia - gearslist[i].progdia) / 10) + Wper / 2
   } else if (gearslist[i].progdia > (gearslist[i].dia + (1 * Wper))) {
@@ -87,7 +107,8 @@ function positionGear() {
     gearslist[i].progdia = gearslist[i].dia
   }
 
-    if (gearslist[i].progx < (gearslist[i].x - (1 * Wper))) {
+  // This is the x one.
+  if (gearslist[i].progx < (gearslist[i].x - (1 * Wper))) {
     gearslist[i].progx += ((gearslist[i].x - gearslist[i].progx) / 10) + Wper / 2
   } else if (gearslist[i].progx > (gearslist[i].x + (1 * Wper))) {
     gearslist[i].progx += ((gearslist[i].x - gearslist[i].progx) / 10) - Wper / 2
@@ -95,7 +116,8 @@ function positionGear() {
     gearslist[i].progx = gearslist[i].x
   }
     
-     if (gearslist[i].progy < (gearslist[i].y - (1 * Hper))) {
+  // this is the y one.
+  if (gearslist[i].progy < (gearslist[i].y - (1 * Hper))) {
     gearslist[i].progy += ((gearslist[i].y - gearslist[i].progy) / 10) + Hper / 2
   } else if (gearslist[i].progy > (gearslist[i].y + (1 * Hper))) {
     gearslist[i].progy += ((gearslist[i].y - gearslist[i].progy) / 10) - Hper / 2
