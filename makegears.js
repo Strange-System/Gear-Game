@@ -27,8 +27,23 @@ function makeGear() {
     progdia: 0,
     slots: [],
     // A list that will contain 8 slots.
+    basepow: 25,
+    // The unmodified power capacity of the gear.
+    // This will be useful for the back-end systems of determining
+    // Whether, at the end of the turn, the gear should increase
+    // its power, or if it has 100 basepow and should make a new
+    // gear instead.
+    pow: 25,
+    // The power capacity of the gear, including all modifications
+    // that the gameplay itself might be applying.
+    // This is for the front end, what the gear will show and the basis
+    // of its calculations for if the gear can support the cards.
+    rpt: 2,
+    // Rotations per turn. The intention is that all sorts of things
+    // will be able to modify this, cards, opponents, etc etc.
+    // Every gear should rotate once per rpt at the end of its turn.
 
-    // TODO: make variables for the gear's information on energy capacity and slots per turn.
+    // TODO: make these three bottommost parts of the gear actually do their things.
     // Create a visual at the center of the gear for this.
     // Make it so at the end of each turn, the gear rotates X times where X is
     // the number of rotations/turn in the variable.
