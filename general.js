@@ -33,10 +33,21 @@ function draw() {
     // This stuff here is for passive movement vvv
     push();
     translate(gearslist[i].progx, gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))));
-    // I'll be placing the center panel between these so it is correctly placed but unrotated -Zoy
+    push ();
     rotate((gearslist[i].position * 45) + sin((frameCount/2.1 + 90)+(i*72)));
     // Then this next line vvv places the image with those pieces.
   image(gearslist[i].file, 0, 0, gearslist[i].progdia, gearslist[i].progdia);
+  pop ();
+    push();
+    noStroke();
+    fill(0);
+    circle(0, 0, gearslist[i].progdia/3);
+    stroke(255);
+    noFill();
+    strokeWeight(gearslist[i].progdia/100);
+    line(0, -gearslist[i].progdia/6, 0, gearslist[i].progdia/6);
+    line(0, 0, -gearslist[i].progdia/6, 0);
+    pop();
   pop();
     // This makes the gear slots put in the right place while being unrotated vvv
   for (let j = 0; j < gearslist[i].slots.length; j++) {
