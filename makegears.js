@@ -43,13 +43,16 @@ function makeGear() {
     // will be able to modify this, cards, opponents, etc etc.
     // Every gear should rotate once per rpt at the end of its turn.
 
+        // I got all this one covered vvv -Zoy
+
     // TODO: make these three bottommost parts of the gear actually do their things.
     // Create a visual at the center of the gear for this.
     // Make it so at the end of each turn, the gear rotates X times where X is
     // the number of rotations/turn in the variable.
     // At the end of each turn, increase energy capacity by 25. If base capacity is 100,
     // Add a new gear with 25 capacity instead.
-    // Add a variable for energy in use.
+
+        // I got all this one covered ^^^ -Zoy
 };
   gear.y = 50 * Hper
   // This literally says "The gear is 50% down the screen"

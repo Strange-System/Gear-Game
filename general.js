@@ -6,13 +6,18 @@ function draw() {
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++
   // this is something I would hope to put in temporary.js, but 
-  // it's built in so I can't.
+  // it's built-in so I can't.
   // mouseIsPressed is going to be replaced with the "end of turn" condition
   // that will be added later.
   if (mouseIsPressed && gearslist[i].position % 1 === 0) {
+    // This is a messy system to rotate the gear in the mechanical looking way you see. vvv
     gearslist[i].position += (1 / 105)
     gearslist[i].rotanimcount = 0
   }
+    // Basically, if it's not snapped into one of the 8 main positions,
+    // and is somewhere in between, that means keep rotating.
+    // rotanimcount is to make sure it rotates exponentially for the correct number of frames.
+    // tbh this system is a mess, but if it works it works
   if (gearslist[i].position % 1 !== 0) {
       gearslist[i].position += gearslist[i].rotanimcount / 105
     if (gearslist[i].rotanimcount === 10) {
@@ -25,13 +30,15 @@ function draw() {
       }
     gearslist[i].rotanimcount++
     }
-    // This stuff here is for passive movement
+    // This stuff here is for passive movement vvv
     push();
     translate(gearslist[i].progx, gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))));
+    // I'll be placing the center panel between these so it is correctly placed but unrotated -Zoy
     rotate((gearslist[i].position * 45) + sin((frameCount/2.1 + 90)+(i*72)));
+    // Then this next line vvv places the image with those pieces.
   image(gearslist[i].file, 0, 0, gearslist[i].progdia, gearslist[i].progdia);
   pop();
-    // And this is to make it move logarithmically to its intended location.
+    // This makes the gear slots put in the right place while being unrotated vvv
   for (let j = 0; j < gearslist[i].slots.length; j++) {
     gearslist[i].slots[j].position = j + gearslist[i].position
     gearslist[i].slots[j].w = gearslist[i].progdia / 5
@@ -44,7 +51,8 @@ function draw() {
 }
 
 function drawBG() {
-  // This all makes a changing gradient background. This is likely going to be changed.
+  // This all makes a changing gradient background. This is likely going to be changed
+  // with a far more interesting background down the line.
   push()
   noStroke()
   const BottomGray = color(11, 11, 11)
@@ -131,11 +139,73 @@ function positionGear() {
 // clicking a slot moves the card into the slot and places it there.
 // Make a variable in the slots in makegears.js that measures the card within.
 
+    // How to do this ^^^
+    // Priority number 1: Make a class for "card" objects.
+    // Give these objects an x variable, a y variable, a w variable, and a h variable.
+    // The width/height ratio for the cards is 5:7 (or I've been using 4:5.6 which works too)
+    // Make sure the card's h is always the card's w*7/5. If you want, you could even
+    // entirely refrain from using an h variable and just always use w*7/5.
+
+    // Priority number 2: Give these card objects a "zone" variable.
+    // This will measure where the card is. For now, it'll either be "play" or "hand"
+    // but down the line it could also be "deck" or "discard" or more
+
+    // Priority number 3: Give these cards an image variable. This will likely be
+    // changed down the line with a system that creates the picture based on the
+    // information of the card, but for now, use a placeholder.
+    // Give the card a variable for a string of its text as well.
+    // Down the line, this will be replaced by six for the six different
+    // modes a card can hypothetically be in, but just one is fine for now.
+
+    // Priority number 4: Make it so any card that has a zone value of "hand" appears
+    // at the bottom of the screen. You can either make it a maximum of 10, or make it
+    // potentially infinite if you wanna get fancy, like I did with the gears.
+
+    // Priority number 5: Add a variable to the slots named something like "card"
+    // that can have a card object placed inside it. This can allow a slot to determine
+    // what card is within it. This will be crucial down the line.
+
+    // Priority number 6: Make it so when you click a card, something happens visually to suggest
+    // that you've selected it. Perhaps have it raise a bit, get slightly bigger,
+    // and hover a bit ambiently.
+    // Then, make it so if you click a slot, it goes to that slot.
+    // Optional, but you could jump the gun and make it animated too, so it moves instead
+    // of snapping into place instantly.
+    // Make it so when you play the card, the zone switches to "play", and the card fits into the slot.
+
 // TODO: make it so a right click on a card displays the card so you can read what it does.
 
-// TODO: make a deck, discard, and hand system, to measure cards no matter where they are,
+    // Basically, just make it so if you right click a card, it shows a copy of it big on screen
+    // so you can read it. Then make any left or right click get rid of the preview.
+
+// TODO (HARD!!): make a deck, discard, and hand system, to measure cards no matter where they are,
 // and to lay the groundwork to allow you to build a deck as you go.
+
+    // The most important key part of this, is to create lists that contain the cards.
+    // It may be best to have a list for all your cards in any place of your deck,
+    // and then a series of sub-lists for cards wherever else they may be.
 
 // TODO: add a turn system, so that instead of rotating all at once on click, the gears
 // rotate in order equal to their rotation/turn count at the end of turn before
 // increasing their energy capacity. 
+
+    // Start by making an end turn button object. Make it scalable and moveable within the code,
+    // So we can move it where it's most convenient, once the visuals are more established.
+
+    // Then, make it so once this button is pressed, it is somehow measured/established that
+    // the turn is ending, and we are in an end-of-turn phase.
+    
+    // When a turn ends, make the gears rotate, left to right (lowest in the list to highest),
+    // each equal to their rpt variable, one at a time. Make this work ad infinitum, using a
+    // kind of loop function.
+
+    // Make the next turn begin after this is all done.
+
+    // Make it so you can't push the end-turn button while the end-turn phase is active.
+
+    // If the "deck" has been added yet, make it so you draw a card at the start of a new turn.
+
+
+// OPTIONAL EXTRA TO-DO
+  // Add sound effects to things you can do in the game. The rotation has noises,
+  // but things like playing cards and stuff hasn't gotten sounds yet.
