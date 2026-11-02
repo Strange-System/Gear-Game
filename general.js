@@ -146,6 +146,10 @@ function positionGear() {
   }
 }
 
+      // Important: I have created a card template file you can use.
+      // the filename is cardTemplate.png
+      // the variable name is cardTemplate
+
 // TODO: add a hand of cards. Make it so if you click a card in your hand,
 // clicking a slot moves the card into the slot and places it there.
 // Make a variable in the slots in makegears.js that measures the card within.

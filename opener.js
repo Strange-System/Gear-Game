@@ -12,6 +12,8 @@ let GEARIMAGE;
 // This is the gear image
 let EMPTYSLOT;
 // This is the picture of a bubble of an empty slot
+let cardTemplate;
+// I added a card template image you can use. :)
 const gearslist = [];
 // A grand list of gears. Within this list, there are objects.
 // Those objects are the gears.
@@ -44,6 +46,7 @@ async function setup() {
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
+  cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
 
   gsnd123 = floor(random(1,4));
 
