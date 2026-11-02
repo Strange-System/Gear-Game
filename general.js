@@ -106,8 +106,9 @@ function positionGear() {
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].dia = 95 * Wper / (gearslist.length + 2)
   gearslist[i].x = (100/(gearslist.length+1))*(i+1) * Wper
-  // this part is the most fundamental. It decides how big a gear SHOULD be,
-  // and where it should be, based on how many there are and which of that list
+  // this part is the most fundamental to the gear positioning.
+  // It decides how big a gear SHOULD be, and where it should be,
+  // based on how many there are and which of that list
   // this gear is.
 
   // Everything below in this function is wacky.
