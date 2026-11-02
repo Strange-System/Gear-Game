@@ -71,3 +71,19 @@ visions. And therefore, a lot of projects. So my work is slow going. But I’d l
 something special to offer. Even if it’s not quite polished and complete… yet.
 
 ## Project 2
+
+Being a group project, pulling together a group at first was rather challenging.
+For a meaningful period of time, I believed I had not successfully found a group.
+Jack (hesitantly, if he doesn't mind me saying it,) joined my group. Later, I found
+Kelly and Kai who also had not found a group. I made the pitch, and they were...
+intimidated. I don't blame them. Code looks very intimidating when you aren't the one
+who made it. I explained to them that I made it piece by piece, and that it is less scary
+when you can see it as a collection of pieces.
+
+Possibly most important though, I went through the code and attached notes explaining
+exactly what every aspect of it was responsible for doing. You can see those notes within
+the code itself. I then created a list of "to-do's". I told the group that you need only do
+one task, (though I did not forbid them from doing more if they really wanted). I said
+that we can each attach our name to any task as we embark on it, so that there is not any
+mistakes with having multiple of us tackling the same thing in our own ways to make
+conflicts.
