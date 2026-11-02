@@ -58,7 +58,10 @@ function draw() {
     gearslist[i].slots[j].y = (gearslist[i].progdia / 2) * sin((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))))
     image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
   }
-}
+  }
+  renderplayerUI(// put whatever inputs you want/need here
+    );
+  // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
 }
 
 function drawBG() {
@@ -208,18 +211,44 @@ function positionGear() {
     // Start by making an end turn button object. Make it scalable and moveable within the code,
     // So we can move it where it's most convenient, once the visuals are more established.
 
+    // I recommend using textBounds() to make sure the text never is outside the button,
+    // regardless of its size or shape.
+
     // Then, make it so once this button is pressed, it is somehow measured/established that
     // the turn is ending, and we are in an end-of-turn phase.
     
     // When a turn ends, make the gears rotate, left to right (lowest in the list to highest),
-    // each equal to their rpt variable, one at a time. Make this work ad infinitum, using a
-    // kind of loop function.
+    // each equal to their rpt variable, one at a time. Make this work hypothetically
+    // ad infinitum, using a kind of loop function. The rotation movement is already in place.
 
     // Make the next turn begin after this is all done.
 
     // Make it so you can't push the end-turn button while the end-turn phase is active.
 
     // If the "deck" has been added yet, make it so you draw a card at the start of a new turn.
+
+// TODO: Add a player box / health bar / status box
+
+    // I envision a small-ish box in the bottom left corner of the screen where
+    // an image of the player character can be shown. Down the line this will be
+    // used to make the image change based on the circumstances, but you just
+    // need to make a box that can have an image put in it down the line.
+    
+    // To the right side of this, create a healthbar object that measures health and max
+    // health, and creates a visual based on that. Ideally, stylize it a lil bit, but if
+    // all you can figure out is an "empty" rectangle with a "full" rectangle placed on top
+    // though, that's just fine.
+
+    // Above this, add a status box. This is a box where status effects (and symbols with them)
+    // down the line will be put there to show you. This is a box that should be able to support
+    // multiple lines of text. Make it so it stretches upward to support text if >1 status
+    // (aka >1 word/line of text) needs to be put in there, and if there's 0, just keep it at its
+    // minimum 1-status height.
+    // Basically, just make this object have a variable to measure # of statuses, and have it
+    // reestablish its height based on that.
+
+    // You can make these three things look fancier if you like! Any drawings or images
+    // added after the other stuff will be placed in front of them, you can use that :)
 
 
 // OPTIONAL EXTRA TO-DO
