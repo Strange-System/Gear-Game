@@ -62,6 +62,15 @@ function draw() {
   renderplayerUI(// put whatever inputs you want/need here
     );
   // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
+  rendercards(// put whatever inputs you want/need here
+    );
+  // this refers to the rendercards.js page ^^^ this is one of the to-dos!
+
+  // You don't need to use these functions if you have a better way to design it, this is
+  // just my way to help compartmentalize.
+  // and if you want to add another, go on ahead! Just remember to add the page to the
+  // HTML file :)
+
 }
 
 function drawBG() {
