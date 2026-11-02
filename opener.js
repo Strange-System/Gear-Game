@@ -43,7 +43,7 @@ async function setup() {
   Wper = width / 100;
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
-  EMPTYSLOT = await loadImage("./assets/Cards/Layout.png");
+  EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
 
   gsnd123 = floor(random(1,4));
 
