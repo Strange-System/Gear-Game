@@ -4,18 +4,11 @@
 
 ### This name is a placeholder and will definitely change
 
-One day, it will be a roguelike deckbuilder with gears used as a playmat. Currently, it's just a fancy gear
+One day, it will be a roguelike deckbuilder with gears used as a playmat.
+Currently, it's just a fancy gear
 simulator with a LOT of foundational code.
 
-## Playable Build
-
-[Play the current version here](http://127.0.0.1:5500)
-
-The current placeholder controls are:
- - Click to rotate the gear.
- - Press R to add another one.
-
-## Development Narrative
+## Project 1
 
 My project starts as something I know I cannot achieve. An idea I’ve had for quite a while. A 
 deckbuilder roguelike, based on a unique system of card play, contrasting against instant effects like the 
@@ -76,3 +69,5 @@ my ideas, and rather, I usually am struck with mental inspiration first, a sort 
 to let very little get in the way of that vision, once that vision is there. Unfortunately, I have a lot of these 
 visions. And therefore, a lot of projects. So my work is slow going. But I’d like to believe I have 
 something special to offer. Even if it’s not quite polished and complete… yet.
+
+## Project 2
