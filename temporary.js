@@ -40,6 +40,9 @@ if (closestSlot !== null && closestDistance < closestSlot.w * 1.5) {
   selectedCard = -1;
     }
   }
+if (key === 'h') {
+  player.health -= 1;
+}
 }
 
 function mouseMoved() {

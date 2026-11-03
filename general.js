@@ -2,6 +2,7 @@ function draw() {
   drawBG() 
   if (!gearslist[0].file) {return}
   // If the gear image hasn't loaded yet everything explodes :( so this line fixes that
+  textFont(pxlFnt);
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++

@@ -14,6 +14,8 @@ let EMPTYSLOT;
 // This is the picture of a bubble of an empty slot
 let cardTemplate;
 // I added a card template image you can use. :)
+let pxlFnt;
+// A pixel font
 const gearslist = [];
 // A grand list of gears. Within this list, there are objects.
 // Those objects are the gears.
@@ -52,6 +54,7 @@ async function setup() {
   Wper = width / 100;
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
+  pxlFnt = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
   cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
 
