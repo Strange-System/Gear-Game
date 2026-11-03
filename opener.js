@@ -16,6 +16,7 @@ let cardTemplate;
 // I added a card template image you can use. :)
 let pxlFnt;
 // A pixel font
+let pxlFntXlight;
 const gearslist = [];
 // A grand list of gears. Within this list, there are objects.
 // Those objects are the gears.
@@ -55,6 +56,7 @@ async function setup() {
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
   pxlFnt = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  pxlFntXlight = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-ExtraLight.ttf");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
   cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
 

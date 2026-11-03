@@ -38,6 +38,7 @@ function makeGear() {
     // that the gameplay itself might be applying.
     // This is for the front end, what the gear will show and the basis
     // of its calculations for if the gear can support the cards.
+    powused: 0,
     rpt: 2,
     // Rotations per turn. The intention is that all sorts of things
     // will be able to modify this, cards, opponents, etc etc.
