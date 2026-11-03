@@ -62,7 +62,8 @@ function draw() {
   }
   }
   // renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
-  // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
+      // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
+    // it has been isolated and turned into a note for now. Bug will be found soon.
   rendercards(// put whatever inputs you want/need here
     );
   // this refers to the rendercards.js page ^^^ this is one of the to-dos!
