@@ -58,10 +58,10 @@ function draw() {
     gearslist[i].slots[j].y = (gearslist[i].progdia / 2) * sin((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))))
     image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
   
-
+ 
   }
   }
-  // renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
+  renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
       // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
     // it has been isolated and turned into a note for now. Bug will be found soon.
   rendercards(// put whatever inputs you want/need here
