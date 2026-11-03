@@ -80,8 +80,7 @@ function draw() {
   pop();
   }
   }
-  // renderplayerUI(// put whatever inputs you want/need here
-  //   );
+  renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
   // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
   rendercards(// put whatever inputs you want/need here
     );

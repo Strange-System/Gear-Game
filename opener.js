@@ -21,6 +21,12 @@ const gearslist = [];
 // Within those lists, are objects. These objects are the slots.
 // Don't get overwhelmed, it sounds like a lot but I promise you can keep up.
 const cards = [];
+const player = {
+  health: 100,
+  maxHealth: 100,
+  statuses: [],
+  image: null
+};
 
 let GearSounds = {
   turn1: [],

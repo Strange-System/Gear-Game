@@ -21,7 +21,7 @@
     // You can make these three things look fancier if you like! Any drawings or images
     // added after the other stuff will be placed in front of them, you can use that :)
 
-function renderplyaerUI( health= 100, maxHealth= 100, statuses= [], playerImage= null) {
+function renderplayerUI(health, maxHealth, statuses, playerImage) {
         // the function is currently placed within the draw function,
         let margin= 20; 
 
