@@ -22,23 +22,24 @@
     // added after the other stuff will be placed in front of them, you can use that :)
 
 function renderplayerUI(health, maxHealth, statuses, playerImage) {
-        const testratio = 10
+        const propalscl = 9
+        // proportional scale
 
-        let margin= 20/testratio * Wper; 
+        let margin= 20/propalscl * Wper; 
 
-        let portraitSize= 90/testratio * Wper; 
+        let portraitSize= 90/propalscl * Wper; 
 
         // health bar 
-        let healthX= margin +portraitSize + (20/testratio * Wper); 
-        let healthY= height - margin - portraitSize + (10/testratio * Hper); 
-        let healthW= 190/testratio * Wper; 
-        let healthH= 25/testratio * Wper; 
+        let healthX= margin +portraitSize + (20/propalscl * Wper); 
+        let healthY= height - margin - portraitSize + (10/propalscl * Hper); 
+        let healthW= 190/propalscl * Wper; 
+        let healthH= 25/propalscl * Wper; 
 
         //status box
         let statusX= margin; 
-        let statusY= height - margin - portraitSize - (15/testratio * Hper); 
-        let statusW= 295/testratio * Wper; 
-        let statusH= max(36, statuses.length * 204 + 12)/testratio * Wper;
+        let statusY= height - margin - portraitSize - (15/propalscl * Hper); 
+        let statusW= 295/propalscl * Wper; 
+        let statusH= max(36, statuses.length * 24 + 12)/propalscl * Wper;
 
         push(); 
 
@@ -47,19 +48,19 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
         fill(20,20,30,230); 
         stroke(150, 150, 170); 
         strokeWeight(2);
-        rect(statusX, statusY, statusW, statusH, 8/testratio * Wper);
+        rect(statusX, statusY - statusH, statusW, statusH, 8/propalscl * Wper);
 
         // status text
-        nostroke();
+        noStroke();
         fill(255);
   textSize(14);
   textAlign(LEFT, TOP);
 
   if (statuses.length === 0) {
-    text("No Status Effects", statusX + 10/testratio * Wper, statusY - statusH + 10/testratio * Wper);
+    text("No Status Effects", statusX + 10/propalscl * Wper, statusY - statusH + 10/propalscl * Wper);
   } else {
     for (let i = 0; i < statuses.length; i++) {
-      text(statuses[i], statusX + 10/testratio * Wper, statusY - statusH + 8/testratio * Wper + (i * 24/testratio * Wper));
+      text(statuses[i], statusX + 10/propalscl * Wper, statusY - statusH + 8/propalscl * Wper + (i * 24/propalscl * Wper));
     }} 
  
  // player portrait 
@@ -67,19 +68,19 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
   stroke(180);
   strokeWeight(2);
   rect(margin, height - margin - portraitSize,
-       portraitSize, portraitSize, 8/testratio * Wper);
+       portraitSize, portraitSize, 8/propalscl * Wper);
 
   // Draw player image 
   if (playerImage !== null) {
-    image(playerImage, margin + 4/testratio * Wper, height - margin - portraitSize + 4/testratio * Wper,
-          portraitSize - 8/testratio * Wper, portraitSize - 8/testratio * Wper);
+    image(playerImage, margin + 4/propalscl * Wper, height - margin - portraitSize + 4/propalscl * Wper,
+          portraitSize - 8/propalscl * Wper, portraitSize - 8/propalscl * Wper);
   }
 // health bar
 
 //empty 
 fill(70, 25, 25);
   stroke(180);
-  rect(healthX, healthY, healthW, healthH, 5/testratio * Wper);
+  rect(healthX, healthY, healthW, healthH, 5/propalscl * Wper);
 
 // Calculate remaining health 
   let healthPercent = 0;
@@ -91,14 +92,14 @@ fill(70, 25, 25);
 // show remaining amount 
   noStroke();
   fill(40, 190, 80);
-  rect(healthX, healthY, healthW * healthPercent, healthH, 5/testratio * Wper);
+  rect(healthX, healthY, healthW * healthPercent, healthH, 5/propalscl * Wper);
 
   // Health numbers
   fill(255);
   textSize(14);
   textAlign(LEFT, BOTTOM);
   text("Health: " + health + " / " + maxHealth,
-       healthX, healthY - 5/testratio * Wper);
+       healthX, healthY - 5/propalscl * Wper);
 
   pop();
 }
