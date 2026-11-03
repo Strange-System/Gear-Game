@@ -20,6 +20,7 @@ const gearslist = [];
 // Within those gear objects, there are lists.
 // Within those lists, are objects. These objects are the slots.
 // Don't get overwhelmed, it sounds like a lot but I promise you can keep up.
+const cards = [];
 
 let GearSounds = {
   turn1: [],
@@ -77,6 +78,10 @@ async function setup() {
   GearSounds.turn3 = [t3_a, t3_b, t3_c];
 
   initGear();
+
+cards.push(new Card(42 * Wper, 90 * Hper, 7 * Wper));
+cards.push(new Card(50 * Wper, 90 * Hper, 7 * Wper));
+cards.push(new Card(58 * Wper, 90 * Hper, 7 * Wper));
 
   loop();
   }
