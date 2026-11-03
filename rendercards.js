@@ -48,8 +48,25 @@
     // It may be best to have a list for all your cards in any place of your deck,
     // and then a series of sub-lists for cards wherever else they may be.
 
-function rendercards( //Add whatever inputs you want/need here
-    ) {
-        // code goes here! Draw function refers to this.
+function rendercards() {
+    push();
+    rectMode(CENTER);
+    fill(225);
+    stroke(0);
+    for (let i = 0; i < cards.length; i++) {
+        let cardY = cards[i].y;
+        if(selectedCard === i) {
+            cardY = cardY - 3* Hper;
+        }
+        fill("purple");
+        stroke(0);
+        rect(cards[i].x, cards[i].y, cards[i].w, cards[i].h);
 
-    };
+        fill(0);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        textSize(cards[i].w * .15);
+        text("Card", cards[i].x, cards[i].y);
+    }
+    pop();
+};

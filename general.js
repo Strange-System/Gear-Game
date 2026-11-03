@@ -58,26 +58,7 @@ function draw() {
     gearslist[i].slots[j].y = (gearslist[i].progdia / 2) * sin((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))))
     image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
   
-  push();
-  rectMode(CENTER);
-  fill(225);
-  stroke(0);
-  for (let i = 0; i < cards.length; i++) {
-    let cardY = cards[i].y;
-    if(selectedCard === i) {
-      cardY = cardY - 3* Hper;
-    }
-  fill("purple");
-  stroke(0);
-  rect(cards[i].x, cards[i].y, cards[i].w, cards[i].h);
 
-  fill(0);
-  noStroke();
-  textAlign(CENTER, CENTER);
-  textSize(cards[i].w * .15);
-  text("Card", cards[i].x, cards[i].y);
-  }
-  pop();
   }
   }
   // renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
