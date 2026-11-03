@@ -48,6 +48,17 @@
     // It may be best to have a list for all your cards in any place of your deck,
     // and then a series of sub-lists for cards wherever else they may be.
 
+class Card {
+  constructor(x, y, w) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+  }
+  get h() {
+    return this.w * 7/5;
+  }
+}
+
 function rendercards() {
     push();
     rectMode(CENTER);
