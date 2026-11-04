@@ -9,7 +9,6 @@ if (key === 'g') {
  console.log("G CHECK", mouseX, mouseY);
 for (let i = 0; i < cards.length; i++) {
 if (mouseX > cards[i].x - cards[i].w / 2 && mouseX < cards[i].x + cards[i].w / 2 && mouseY > cards[i].y - cards[i].h / 2 && mouseY < cards[i].y + cards[i].h / 2) {
- console.log("CARD FOUND", i);
  selectedCard = i;
  draggingCard = i;
   break;
@@ -17,7 +16,6 @@ if (mouseX > cards[i].x - cards[i].w / 2 && mouseX < cards[i].x + cards[i].w / 2
  }
 }
 if (key === 'p') {
- console.log("P CHECK", draggingCard);
 if (draggingCard !== -1) {
   let closestSlot = null;
   let closestDistance = Infinity;
@@ -33,9 +31,7 @@ if (distance < closestDistance) {
 }
 if (closestSlot !== null && closestDistance < closestSlot.w * 1.5) {
   cards[draggingCard].x = closestSlot.x;
-  cards[draggingCard].y = closestSlot.y;
-  console.log("CARD PLACED");
-      }
+  cards[draggingCard].y = closestSlot.y;      }
   draggingCard = -1;
   selectedCard = -1;
     }
@@ -45,6 +41,8 @@ if (key === 'h') {
 }
 }
 
+
+
 function mouseMoved() {
 if (draggingCard !== -1) {
   cards[draggingCard].x = mouseX;
@@ -52,6 +50,27 @@ if (draggingCard !== -1) {
  }
 }
 
+//Kai's Code for card placement and selection
+function mousePressed() {
+
+  // card was clicked?
+  for (let i = 0; i < cards.length; i++) {
+
+    let card = cards[i];
+
+    if (mouseX > card.x - card.w/2 &&
+        mouseX < card.x + card.w/2 &&
+        mouseY > card.y - card.h/2 &&
+        mouseY < card.y + card.h/2) {
+
+      selectedCard = i;
+      selectSound.play();
+return;
+      return;
+    }
+  }
+ 
+}
 
 
 

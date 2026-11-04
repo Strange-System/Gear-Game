@@ -13,6 +13,10 @@ let GEARIMAGE;
 let EMPTYSLOT;
 // This is the picture of a bubble of an empty slot
 let cardTemplate;
+
+//Kais variable for select sound
+let selectSound;
+
 // I added a card template image you can use. :)
 let pxlFnt;
 // A pixel font
@@ -95,4 +99,8 @@ cards.push(new Card(50 * Wper, 90 * Hper, 7 * Wper));
 cards.push(new Card(58 * Wper, 90 * Hper, 7 * Wper));
 
   loop();
+//My function to load the card select sound (do reccomend moving to where you would like it)
+  selectSound = await loadSound("./assets/Sounds/CardSelect.mp3");
   }
+
+ 

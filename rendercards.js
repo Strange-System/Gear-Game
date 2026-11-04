@@ -53,31 +53,46 @@ class Card {
     this.x = x;
     this.y = y;
     this.w = w;
+    this.zone = "hand";
+    this.image = cardTemplate;
+    this.text = "Card";
   }
+
   get h() {
     return this.w * 7/5;
   }
 }
-
+//Kai's code for card placement and selection
 function rendercards() {
-    push();
-    rectMode(CENTER);
-    fill(225);
-    stroke(0);
-    for (let i = 0; i < cards.length; i++) {
-        let cardY = cards[i].y;
-        if(selectedCard === i) {
-            cardY = cardY - 3* Hper;
-        }
-        fill("purple");
-        stroke(0);
-        rect(cards[i].x, cards[i].y, cards[i].w, cards[i].h);
+  push();
+  imageMode(CENTER);
 
-        fill(0);
-        noStroke();
-        textAlign(CENTER, CENTER);
-        textSize(cards[i].w * .15);
-        text("Card", cards[i].x, cards[i].y);
+  for (let i = 0; i < cards.length; i++) {
+
+    if (cards[i].zone === "hand") {
+
+      let cardY = cards[i].y;
+
+    
+      if (selectedCard === i) {
+        cardY -= 3 * Hper;
+      }
+
+      image(
+        cards[i].image,
+        cards[i].x,
+        cardY,
+        cards[i].w,
+        cards[i].h
+      );
+
+      fill(0);
+      noStroke();
+      textAlign(CENTER, CENTER);
+      textSize(cards[i].w * 0.15);
+      text(cards[i].text, cards[i].x, cardY);
     }
-    pop();
-};
+  }
+
+  pop();
+}
