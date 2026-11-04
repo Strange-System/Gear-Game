@@ -72,6 +72,8 @@ something special to offer. Even if it’s not quite polished and complete… ye
 
 ## Project 2
 
+### Zoy:
+
 Being a group project, pulling together a group at first was rather challenging.
 For a meaningful period of time, I believed I had not successfully found a group.
 Jack (hesitantly, if he doesn't mind me saying it,) joined my group. Later, I found
@@ -82,8 +84,91 @@ when you can see it as a collection of pieces.
 
 Possibly most important though, I went through the code and attached notes explaining
 exactly what every aspect of it was responsible for doing. You can see those notes within
-the code itself. I then created a list of "to-do's". I told the group that you need only do
-one task, (though I did not forbid them from doing more if they really wanted). I said
-that we can each attach our name to any task as we embark on it, so that there is not any
-mistakes with having multiple of us tackling the same thing in our own ways to make
-conflicts.
+the code itself. I then created a list of "to-do's". I told the group that you need only
+do one task, (though I did not forbid them from doing more if they really wanted). I said
+that we can each attach our name to any task as we embark on it, so that there are not any
+mistakes with having multiple of us tackling the same thing in our own ways to make conflicts.
+
+There were a variety of troubles and errors encountered by my groupmates in their efforts to
+push, pull, and commit, and generally stay in sync with the cloud. I gathered all the
+information I could and helped get them through these issues, but generally, it’s
+challenging to resolve errors when you aren’t the one at the screen. One of these errors was
+merely a visual error. There were also errors with distinction between forks and mains I
+assisted Kelly through, as well as between local and cloud which I assisted Jack through.
+
+My primary addition within this assignment, on the front end, was the gear interface. These are
+three numbers paired to stats within the gear. These express how much power the gear holds, how
+much is consumed at the moment, and how many rotations per turn it will take. These variables
+are capable of change which will show on the interface, even if they do not yet interact with
+the other mechanics.
+	
+More important, however, are my efforts in direction. I laid out a variety of tasks others could
+perform, and assisted in a variety of technical difficulties, as well as bug-fixing within the
+code itself. Both Kelly and Jack had issues with committing edits to the repository which I
+helped resolve, and Kelly’s code had some errors: two build-time errors and some run-time
+errors. These were minor things that she couldn’t have been blamed for, of course. She, like
+all my teammates, were lovely.
+
+Though the various pieces of our project don’t interconnect yet, as of the end of project two,
+they are ready to. We have made major progress in all facets.
+
+### Kelly:
+
+Due to a situation, I was unable to attend class last Monday when everyone made their groups.
+On Wednesday I partnered with Kai because he had also missed Monday so he didn’t have a group.
+We originally were thinking of doing some sort of snake game like snake.io but then Zoy and
+Jack approached us to see if we would like to join their group. I was pretty intimidated at
+first because I do not have a whole lot of confidence in my coding and I did not want to be
+the person that would drag the team down. Especially when it is someone’s passion project.
+However, Zoy explained that like the previous assignment they had made their own TODOs and that
+their code had plenty of notes to understand their code. Kai and I ended up agreeing to join Zoy
+and Jack’s group. Unfortunately, I did have to work closing shifts on Thursday and Friday at
+one of my jobs and 8 hour shifts on Saturday and Sunday at my second job so I was not really
+able to work on the project until Monday. Then we ran into a very small issue. I made my own
+fork of Zoy’s repository and when I tried to push a small commit just to make sure it worked,
+it did in fact not work. So after Lucky helped, we figured out we needed to be added as
+collaborators. I claimed the TODO for the player box , health bar and the status box. That
+meant that all my work was within the playercornerUI.js file. I read all of Zoy’s notes on what
+they wanted before I got to work. I broke down each part: Player box, health box and status box.
+I also added a spot to be able to add a player image/icon which I did leave null.  I used fixed
+sizes for the boxes and health bar initially. I had the health start at 100 since that is how
+it works in most games and capped the health at 100. For the statuses I used an array to hold
+the different status effects. The health bar changes based on the percentage of the health of
+the player.  I did all my code Monday night and committed it so Zoy could look at it and let
+me know if there was anything they didn’t like. They did end up fixing the fixed sizes I had so
+that it could better scale to the canvas size. They were also kind enough to debug my code which
+were just small mistakes I made like spelling and capitalization. I hope my code lived up to
+what they wanted! I think it's important that it looks how they wanted it to look considering it's
+their project! I'm still new to Github and VS code and just coding in general so it was a
+challenge to make sure I did things right and not mess anything up.
+
+### Kai:
+
+After being recruited to Zoy’s group, they graciously added many notes breaking down their code
+with “to do” steps within it. After looking at their code for a while to understand what's going
+on I took on the project of making the card selection visible on screen. I designed my own sound
+by scraping a brass lamp with a coin and adding a low pass to it to make it sound more “spacey”.
+After creating a function that loads the sound into the code, I started working on the card
+select animation. After adding a for loop that checks the boundaries to make sure I'm within
+the card boundaries you are able to mouseclick to move the card upwards while the sound that I
+designed earlier plays. I enjoyed working with this group as Zoy breaking down the code made it
+very easy to understand what was going on. To make things easier for them to implement in the
+game, I made sure to add notes to my code so that they can understand what's going on with my
+code with tips on where they should move them too. Luckily I didn't have the same commit issues
+as my other group members as I didn't create a fork so after verifying locally that my code
+functions and can be implemented I made a commit to the server file.
+
+### Jack:
+
+When Zoy first approached me about expanding their last project, I was hesitant because the code
+looked intimidating at first glance. There were a bunch of tiny moving parts and nuances I
+couldn’t fully understand at first, but I was willing to give it a shot. It also made me feel
+better that Kai and Kelly joined our group with similar feelings of being overwhelmed by Zoy's
+code. Zoy broke it down into little to-dos, and I picked drawing the cards and putting them into
+the slots. This made it a lot easier since I only had to tackle one task and pretty much only had
+to draw the cards and make them able to be picked up and moved into the slot. I drew the three
+cards at the bottom of the screen, then I made it so that if you pressed the “g” key, it would
+grab the card and then follow your mouse without it being pressed. Then, to place it in the slot,
+you just press “p” anywhere relatively close to the slot, and it automatically drops in the slot.
+I also ran into similar problems as Kelly with committing my code, but Zoy helped me figure it
+out. 
