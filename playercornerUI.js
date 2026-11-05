@@ -72,8 +72,11 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
 
   // Draw player image 
   if (playerImage !== null) {
-    image(playerImage, margin + 4/propalscl * Wper, height - margin - portraitSize + 4/propalscl * Wper,
-          portraitSize - 8/propalscl * Wper, portraitSize - 8/propalscl * Wper);
+    push();
+    imageMode(CORNER);
+    image(playerImage, round(margin + 4/propalscl * Wper), round(height - margin - portraitSize + 4/propalscl * Wper),
+          round(portraitSize - 8/propalscl * Wper), round(portraitSize - 8/propalscl * Wper));
+    pop();
   }
 // health bar
 

@@ -82,10 +82,15 @@ function draw() {
     );
   // this refers to the rendercards.js page ^^^ this is one of the to-dos!
 
-  // You don't need to use these functions if you have a better way to design it, this is
-  // just my way to help compartmentalize.
-  // and if you want to add another, go on ahead! Just remember to add the page to the
-  // HTML file :) 
+  if (profiles.Tough?.Neutral?.length > 1) {
+    if (millis() - latestprofanim >= 200) {
+      let frames = profiles.Tough.Neutral;
+      let current = frames.indexOf(player.image);
+
+      player.image = frames[(current + 1) % frames.length];
+      latestprofanim = millis();
+    }  
+  }
 }
 
 function drawBG() {

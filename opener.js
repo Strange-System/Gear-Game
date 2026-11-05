@@ -37,6 +37,10 @@ const player = {
   image: null
 };
 
+let profiles = {};
+
+let latestprofanim = 0
+
 let GearSounds = {
   turn1: [],
   turn2: [],
@@ -55,6 +59,8 @@ async function setup() {
   } else {
     createCanvas(windowHeight * 16 / 9, windowHeight);
   }
+  drawingContext.imageSmoothingEnabled = true;
+  drawingContext.imageSmoothingQuality = "high";
   noLoop();
   angleMode(DEGREES);
   imageMode(CENTER);
@@ -96,13 +102,43 @@ async function setup() {
 
   initGear();
 
-cards.push(new Card(42 * Wper, 90 * Hper, 7 * Wper));
-cards.push(new Card(50 * Wper, 90 * Hper, 7 * Wper));
-cards.push(new Card(58 * Wper, 90 * Hper, 7 * Wper));
+  cards.push(new Card(42 * Wper, 90 * Hper, 7 * Wper));
+  cards.push(new Card(50 * Wper, 90 * Hper, 7 * Wper));
+  cards.push(new Card(58 * Wper, 90 * Hper, 7 * Wper));
 
   loop();
-//My function to load the card select sound (do reccomend moving to where you would like it)
-  selectSound = await loadSound("./assets/Sounds/CardSelect.mp3");
-  }
 
- 
+  selectSound = await loadSound("./assets/Sounds/CardSelect.mp3");
+
+  await loadProfiles();
+}
+
+
+
+// This stuff down here gets real crazy vvv
+
+  async function loadProfiles() {
+    const structure = await loadJSON("./assets/Profile/profiles.json");
+
+    for (const profileName of Object.keys(structure)) {
+        profiles[profileName] = {};
+
+        for (const stateName of structure[profileName]) {
+            profiles[profileName][stateName] = [];
+
+            let imageNumber = 1;
+
+            while (true) {
+                const path = `./assets/Profile/${profileName}/${stateName}/${profileName}${stateName}${imageNumber}.png`;
+
+                try {
+                    const img = await loadImage(path);
+                    profiles[profileName][stateName].push(img);
+                    imageNumber++;
+                } catch (error) {
+                    break;
+                }
+            }
+        }
+    }
+}
