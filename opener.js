@@ -28,6 +28,8 @@ const gearslist = [];
 // Within those lists, are objects. These objects are the slots.
 // Don't get overwhelmed, it sounds like a lot but I promise you can keep up.
 const cards = [];
+const TN = [0, 0, 0, 0];
+const TF = [0, 0, 0];
 const player = {
   health: 100,
   maxHealth: 100,
@@ -69,7 +71,7 @@ async function setup() {
   
 // Tried to do this stuff with a for loop,
 // but use of loading things in a for loop makes it return an error
-// because it thinks it's an infinite loop
+// because it thinks it's an infinite loop. Prob wouldn't do this anymore in local, but why bother changing it now
   let t1_a = await loadSound("/assets/Sounds/Gearturn1.mp3");
   let t1_b = await loadSound("/assets/Sounds/Gearturn1.mp3");
   let t1_c = await loadSound("/assets/Sounds/Gearturn1.mp3");
