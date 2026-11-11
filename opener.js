@@ -74,6 +74,7 @@ async function setup() {
 
   gsnd123 = floor(random(1,4));
 
+  document.documentElement.style.cursor = 'none';
   
 // Tried to do this stuff with a for loop,
 // but use of loading things in a for loop makes it return an error

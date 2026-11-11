@@ -1,5 +1,5 @@
 function draw() {
-  drawBG() 
+  drawBG();
   if (!gearslist[0].file) {return}
   // If the gear image hasn't loaded yet everything explodes :( so this line fixes that
   textFont(pxlFnt);
@@ -76,11 +76,7 @@ function draw() {
   }
   }
   renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
-      // this refers to the playercornerUI.js page ^^^ this is one of the to-dos!
-    // it has been isolated and turned into a note for now. Bug will be found soon.
-  rendercards(// put whatever inputs you want/need here
-    );
-  // this refers to the rendercards.js page ^^^ this is one of the to-dos!
+  rendercards();
 
   if (profiles.Tough?.Neutral?.length > 1) {
     if (millis() - latestprofanim >= 200) {
@@ -91,6 +87,7 @@ function draw() {
       latestprofanim = millis();
     }  
   }
+  drawCursor();
 }
 
 function drawBG() {
@@ -178,6 +175,18 @@ function positionGear() {
   }
   }
 }
+
+function drawCursor() {
+  push();
+  translate(mouseX, mouseY);
+  noStroke();
+  rectMode(CENTER);
+  fill(255, 255, 255);
+  circle(0, 0, 1*Hper);
+  rect(0, 0, 2*Hper, 0.5*Hper);
+  rect(0, 0, 0.5*Hper, 2*Hper);
+  pop();
+};
 
       // Important: I have created a card template file you can use.
       // the filename is cardTemplate.png
