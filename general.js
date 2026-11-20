@@ -8,9 +8,9 @@ function draw() {
   gearslist[i].personalfc++
   // this is something I would hope to put in temporary.js, but 
   // it's built-in so I can't.
-  // mouseIsPressed is going to be replaced with the "end of turn" condition
+  // key === 'z' is going to be replaced with the "end of turn" condition
   // that will be added later.
-  if (mouseIsPressed && gearslist[i].position % 1 === 0) {
+  if (key === 'z' && gearslist[i].position % 1 === 0) {
     // This is a messy system to rotate the gear in the mechanical looking way you see. vvv
     gearslist[i].position += (1 / 105)
     gearslist[i].rotanimcount = 0
