@@ -64,7 +64,7 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
     }} 
  
  // player portrait 
-    fill (35, 35, 50);
+    fill (0);
   stroke(180);
   strokeWeight(2);
   rect(margin, height - margin - portraitSize,
