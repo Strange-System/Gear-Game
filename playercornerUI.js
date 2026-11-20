@@ -30,15 +30,15 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
         let portraitSize= 90/propalscl * Wper; 
 
         // health bar 
-        let healthX= margin +portraitSize + (20/propalscl * Wper); 
-        let healthY= height - margin - portraitSize + (10/propalscl * Hper); 
+        let healthX= margin +portraitSize + (12/propalscl * Wper); 
+        let healthY= height - margin - portraitSize + (115/propalscl * Hper); 
         let healthW= 190/propalscl * Wper; 
         let healthH= 25/propalscl * Wper; 
 
         //status box
-        let statusX= margin; 
-        let statusY= height - margin - portraitSize - (15/propalscl * Hper); 
-        let statusW= 295/propalscl * Wper; 
+        let statusX= margin +portraitSize + (12/propalscl * Wper);
+        let statusY= height - margin - portraitSize + (65/propalscl * Hper); 
+        let statusW= 190/propalscl * Wper; 
         let statusH= max(36, statuses.length * 24 + 12)/propalscl * Wper;
 
         push(); 
