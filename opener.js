@@ -34,7 +34,8 @@ const player = {
   health: 100,
   maxHealth: 100,
   statuses: [],
-  image: null
+  image: null,
+  heldcard: false,
 };
 
 let profiles = {};
