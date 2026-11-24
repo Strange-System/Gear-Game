@@ -70,11 +70,28 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
   rect(margin, height - margin - portraitSize,
        portraitSize, portraitSize, 8/propalscl * Wper);
 
+
+
+
   // Draw player image 
   if (playerImage !== null) {
     push();
     imageMode(CORNER);
     image(playerImage, round(margin + 4/propalscl * Wper), round(height - margin - portraitSize + 4/propalscl * Wper),
+          round(portraitSize - 8/propalscl * Wper), round(portraitSize - 8/propalscl * Wper));
+    pop();
+  }
+  if (player.imageoverlay !== null) {
+    push();
+    imageMode(CORNER);
+    image(player.imageoverlay, round(margin + 4/propalscl * Wper), round(height - margin - portraitSize + 4/propalscl * Wper),
+          round(portraitSize - 8/propalscl * Wper), round(portraitSize - 8/propalscl * Wper));
+    pop();
+  }
+  if (player.imageoverlaytwo !== null) {
+    push();
+    imageMode(CORNER);
+    image(player.imageoverlaytwo, round(margin + 4/propalscl * Wper), round(height - margin - portraitSize + 4/propalscl * Wper),
           round(portraitSize - 8/propalscl * Wper), round(portraitSize - 8/propalscl * Wper));
     pop();
   }
@@ -105,19 +122,74 @@ fill(70, 25, 25);
        healthX, healthY - 5/propalscl * Wper);
 
   pop();
-
-  profileimage();
 }
 
-function profileimage() {
-// placeholder for profile image, being changed rn vvv
-  if (profiles.Tough?.Neutral?.length > 1) {
-    if (millis() - latestprofanim >= 200) {
-      let frames = profiles.Tough.Neutral;
-      let current = frames.indexOf(player.image);
+function chooseprofileimage() {
 
-      player.image = frames[(current + 1) % frames.length];
-      latestprofanim = millis();
-    }  
+let p = player.identity;
+let gowild = false
+let onepercent = floor(random(1,101))
+
+  if (identitychange === true) {
+    latestprofanim = millis() - 300/pas
+    // this makes it so if you switch identities, the profile image updates immediately!
+  }
+
+  if (player.identity === "Wrath" && onepercent === 1 && player.broken === true) {
+    gowild = true;
+  }
+
+  if (player.statuses.includes("fear") && profiles[p]?.Fear?.length > 1) {
+        if (millis() - latestprofanim >= 200/pas) {
+          let frames = profiles[p].Fear;
+          let current = frames.indexOf(player.image);
+
+          player.image = frames[(current + 1) % frames.length];
+        }
+  } else if (player.statuses.includes("manic") && profiles[p]?.Manic?.length > 1) {
+        if (millis() - latestprofanim >= 200/pas) {
+          let frames = profiles[p].Manic;
+          let current = frames.indexOf(player.image);
+
+          player.image = frames[(current + 1) % frames.length];
+        } 
+  } else if (profiles[p]?.Neutral?.length > 1) {
+        if (millis() - latestprofanim >= 200/pas) {
+          let frames = profiles[p].Neutral;
+          let current = frames.indexOf(player.image);
+
+          player.image = frames[(current + 1) % frames.length];
+        } 
+  } else {
+      player.image = profileerrorimg;
+  }
+
+  if (player.broken === true) {
+    if (player.statuses.includes("fear")) {
+      if (profiles[p]?.BrokenFear?.length > 1) {
+        if (millis() - latestprofanim >= 200/pas) {
+          let frames = profiles[p].BrokenFear;
+          let current = frames.indexOf(player.imageoverlaytwo);
+
+          player.imageoverlaytwo = frames[(current + 1) % frames.length];
+        }  
+      }
+    }
+
+    if (profiles[p]?.Broken?.length > 1) {
+      if (millis() - latestprofanim >= 200/pas) {
+        let frames = profiles[p].Broken;
+        let current = frames.indexOf(player.imageoverlay);
+        player.imageoverlay = frames[(current + 1) % frames.length];
+      }  
+    }
+    
+  } else {
+    player.imageoverlay = null;
+    player.imageoverlaytwo = null;
+  }
+
+  if (millis() - latestprofanim >= 200/pas) {
+    latestprofanim = millis();
   }
 }

@@ -14,6 +14,9 @@ let EMPTYSLOT;
 // This is the picture of a bubble of an empty slot
 let cardTemplate;
 
+let profileerrorimg;
+//the image that'll show if no sprites for the profile are found
+
 //Kais variable for select sound
 let selectSound;
 
@@ -35,10 +38,23 @@ const player = {
   maxHealth: 100,
   statuses: [],
   image: null,
+  imageoverlay: null,
+  imageoverlaytwo: null,
   heldcard: false,
+  identity: "Tough",
+  broken: false
 };
 
 let profiles = {};
+
+let pas = 1;
+// profile animation speed. 1 Is normal, 2 is 2x as fast, 0.5 is 50% speed
+
+let identitychange = false;
+// this will change to true if the player was a different identity last frame. Makes for snap changes.
+
+let lastframeidentity
+// will be the identity equipped last frame, makes identitychange check work
 
 let latestprofanim = 0
 
@@ -72,6 +88,7 @@ async function setup() {
   pxlFntXlight = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-ExtraLight.ttf");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
   cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
+  profileerrorimg = await loadImage("./assets/Profile/ProfileError.png")
 
   gsnd123 = floor(random(1,4));
 

@@ -2,6 +2,14 @@ function draw() {
   drawBG();
   if (!gearslist[0].file) {return}
   // If the gear image hasn't loaded yet everything explodes :( so this line fixes that
+
+  if (lastframeidentity === player.identity) {
+    identitychange = false
+  } else {
+    identitychange = true
+  }
+
+
   textFont(pxlFnt);
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
@@ -75,6 +83,8 @@ function draw() {
  
   }
   }
+    // Select player image
+  chooseprofileimage();
   renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
   rendercards();
 
