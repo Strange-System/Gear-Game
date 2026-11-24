@@ -78,17 +78,7 @@ function draw() {
   renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
   rendercards();
 
-  // placeholder for profile image, being changed rn vvv
-  if (profiles.Tough?.Neutral?.length > 1) {
-    if (millis() - latestprofanim >= 200) {
-      let frames = profiles.Tough.Neutral;
-      let current = frames.indexOf(player.image);
 
-      player.image = frames[(current + 1) % frames.length];
-      latestprofanim = millis();
-    }  
-  }
-  // placeholder for profile image, being changed rn ^^^
 
   drawCursor();
 }

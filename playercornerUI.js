@@ -105,4 +105,19 @@ fill(70, 25, 25);
        healthX, healthY - 5/propalscl * Wper);
 
   pop();
+
+  profileimage();
+}
+
+function profileimage() {
+// placeholder for profile image, being changed rn vvv
+  if (profiles.Tough?.Neutral?.length > 1) {
+    if (millis() - latestprofanim >= 200) {
+      let frames = profiles.Tough.Neutral;
+      let current = frames.indexOf(player.image);
+
+      player.image = frames[(current + 1) % frames.length];
+      latestprofanim = millis();
+    }  
+  }
 }
