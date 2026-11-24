@@ -84,7 +84,40 @@ function rendercards() {
       cards[i].w = cards[i].slot.w;
     }
 
-    if (cards[i].zone === "hand" || cards[i].zone === "play") {
+    if (cards[i].zone === "play") {
+
+      let cardY = cards[i].y;
+
+    
+      if (selectedCard === i) {
+        cardY -= 3 * Hper;
+      }
+
+      image(
+        cards[i].image,
+        cards[i].x,
+        cardY,
+        cards[i].w,
+        cards[i].h
+      );
+
+      fill(0);
+      noStroke();
+      textAlign(CENTER, CENTER);
+      textSize(cards[i].w * 0.15);
+      text(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
+    }
+  }
+  // two separate for loops so that hand is rendered after play
+  for (let i = 0; i < cards.length; i++) {
+
+    if (cards[i].slot !== null) {
+      cards[i].x = cards[i].slot.x;
+      cards[i].y = cards[i].slot.y;
+      cards[i].w = cards[i].slot.w;
+    }
+
+    if (cards[i].zone === "hand") {
 
       let cardY = cards[i].y;
 
