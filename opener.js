@@ -31,17 +31,16 @@ const gearslist = [];
 // Within those lists, are objects. These objects are the slots.
 // Don't get overwhelmed, it sounds like a lot but I promise you can keep up.
 const cards = [];
-const TN = [0, 0, 0, 0];
-const TF = [0, 0, 0];
+
 const player = {
   health: 100,
   maxHealth: 100,
-  statuses: [],
+  statuses: ["manic"],
   image: null,
   imageoverlay: null,
   imageoverlaytwo: null,
   heldcard: false,
-  identity: "Tough",
+  identity: "Wrath",
   broken: false
 };
 

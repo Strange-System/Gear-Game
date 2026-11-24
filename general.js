@@ -78,8 +78,10 @@ function draw() {
     gearslist[i].slots[j].h = gearslist[i].progdia*5.6 / 20
     gearslist[i].slots[j].x = (gearslist[i].progdia / 2) * cos((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progx)
     gearslist[i].slots[j].y = (gearslist[i].progdia / 2) * sin((gearslist[i].slots[j].position * 45) + sin((frameCount/2.1 + 90)+(i*72))) + (gearslist[i].progy + (Hper * 0.5 * (sin((frameCount * 1.5)+(i*72)))))
+    
+    if (gearslist[i].slots[j].card === null) {
     image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
-  
+    }
  
   }
   }
