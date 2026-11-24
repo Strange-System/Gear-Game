@@ -78,6 +78,7 @@ function draw() {
   renderplayerUI(player.health, player.maxHealth, player.statuses, player.image);
   rendercards();
 
+  // placeholder for profile image, being changed rn vvv
   if (profiles.Tough?.Neutral?.length > 1) {
     if (millis() - latestprofanim >= 200) {
       let frames = profiles.Tough.Neutral;
@@ -87,6 +88,8 @@ function draw() {
       latestprofanim = millis();
     }  
   }
+  // placeholder for profile image, being changed rn ^^^
+
   drawCursor();
 }
 
