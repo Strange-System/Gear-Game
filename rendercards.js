@@ -63,6 +63,8 @@ class Card {
     this.Sorrow = null;
     this.Reason = null;
     this.slot = null;
+    this.handX = x;
+    this.handY = y;
   }
 
   get h() {
@@ -75,6 +77,12 @@ function rendercards() {
   imageMode(CENTER);
 
   for (let i = 0; i < cards.length; i++) {
+
+    if (cards[i].slot !== null) {
+      cards[i].x = cards[i].slot.x;
+      cards[i].y = cards[i].slot.y;
+      cards[i].w = cards[i].slot.w;
+    }
 
     if (cards[i].zone === "hand" || cards[i].zone === "play") {
 
