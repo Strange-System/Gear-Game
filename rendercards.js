@@ -56,6 +56,13 @@ class Card {
     this.zone = "hand";
     this.image = cardTemplate;
     this.title = "Card";
+    this.Tough = null;
+    this.Wrath = null;
+    this.Panic = null;
+    this.Creative = null;
+    this.Sorrow = null;
+    this.Reason = null;
+    this.slot = null;
   }
 
   get h() {
@@ -69,7 +76,7 @@ function rendercards() {
 
   for (let i = 0; i < cards.length; i++) {
 
-    if (cards[i].zone === "hand") {
+    if (cards[i].zone === "hand" || cards[i].zone === "play") {
 
       let cardY = cards[i].y;
 
@@ -90,7 +97,7 @@ function rendercards() {
       noStroke();
       textAlign(CENTER, CENTER);
       textSize(cards[i].w * 0.15);
-      text(cards[i].title, cards[i].x, cardY-(cards[i].w / 0.4));
+      text(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
     }
   }
 
