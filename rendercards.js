@@ -55,7 +55,7 @@ class Card {
     this.w = w;
     this.zone = "hand";
     this.image = cardTemplate;
-    this.text = "Card";
+    this.title = "Card";
   }
 
   get h() {
@@ -90,7 +90,7 @@ function rendercards() {
       noStroke();
       textAlign(CENTER, CENTER);
       textSize(cards[i].w * 0.15);
-      text(cards[i].text, cards[i].x, cardY);
+      text(cards[i].title, cards[i].x, cardY-(cards[i].w / 0.4));
     }
   }
 

@@ -8,7 +8,7 @@ function draw() {
   } else {
     identitychange = true
   }
-
+  lastframeidentity = player.identity
 
   textFont(pxlFnt);
   positionGear();
