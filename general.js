@@ -83,8 +83,6 @@ function draw() {
     image(gearslist[i].slots[j].file, gearslist[i].slots[j].x, gearslist[i].slots[j].y, gearslist[i].slots[j].w, gearslist[i].slots[j].h);
     }
 
-    gearslist[i].slots[j].valid = Number.isInteger(gearslist[i].slots[j].pos);
-
   }
   }
     // Select player image

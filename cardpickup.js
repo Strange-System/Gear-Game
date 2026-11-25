@@ -38,7 +38,9 @@ if (distance < closestDistance) {
    }
  }
 }
-if (closestSlot !== null && closestDistance < closestSlot.w * 0.75) {
+if (closestSlot !== null
+  && closestDistance < closestSlot.w * 0.75
+  && player.heldcard.playable[closestSlot.pos]) {
   player.heldcard.x = closestSlot.x;
   player.heldcard.y = closestSlot.y;
   closestSlot.card = player.heldcard;

@@ -145,7 +145,7 @@ function rendercards() {
 
   for (let i = 0; i < cards.length; i++) {
     if (cards[i].zone === "hand" || cards[i].zone === "play") {
-      
+
     }
   }
 

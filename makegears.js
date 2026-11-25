@@ -85,7 +85,6 @@ function makeSlot(i) {
     h: 0,
     x: 0,
     y: 0,
-    valid: true,
     pos: i,
     //Kai's null variable for the slot to hold a card object
     card: null,
