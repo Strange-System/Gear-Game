@@ -54,7 +54,6 @@ class Card {
     this.y = y;
     this.w = w;
     this.zone = "hand";
-    this.image = cardTemplate;
     this.title = "Card";
     this.Tough = null;
     this.Wrath = null;
@@ -94,13 +93,7 @@ function rendercards() {
         cardY -= 3 * Hper;
       }
 
-      image(
-        cards[i].image,
-        cards[i].x,
-        cardY,
-        cards[i].w,
-        cards[i].h
-      );
+      drawcard(i);
 
       fill(0);
       noStroke();
@@ -127,13 +120,7 @@ function rendercards() {
         cardY -= 3 * Hper;
       }
 
-      image(
-        cards[i].image,
-        cards[i].x,
-        cardY,
-        cards[i].w,
-        cards[i].h
-      );
+      drawcard(i);
 
       fill(0);
       noStroke();
@@ -150,4 +137,31 @@ function rendercards() {
   }
 
   pop();
+}
+
+function drawcard(i) {
+
+  rectMode(CENTER);
+
+  push();
+  stroke(255);
+  strokeWeight(cards[i].w/12)
+  noFill();
+  rect(cards[i].x, cards[i].y, cards[i].w*23/24, cards[i].h*23/24, cards[i].w/12)
+  pop();
+
+  push();
+  stroke(255);
+  strokeWeight(cards[i].w/12)
+  fill(255);
+  rect(cards[i].x, cards[i].y-(cards[i].h*2/5), cards[i].w*23/24, cards[i].h*23/160, cards[i].w/12)
+  pop();
+
+  // image(
+  //  cards[i].image,
+  //  cards[i].x,
+  //  cardY,
+  //  cards[i].w,
+  //  cards[i].h
+  // );
 }
