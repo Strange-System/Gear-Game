@@ -65,6 +65,7 @@ class Card {
     this.slot = null;
     this.handX = x;
     this.handY = y;
+    this.playable = [0,0,0,0,0,0,0,0]
   }
 
   get h() {
@@ -139,6 +140,12 @@ function rendercards() {
       textAlign(CENTER, CENTER);
       textSize(cards[i].w * 0.15);
       text(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
+    }
+  }
+
+  for (let i = 0; i < cards.length; i++) {
+    if (cards[i].zone === "hand" || cards[i].zone === "play") {
+      
     }
   }
 
