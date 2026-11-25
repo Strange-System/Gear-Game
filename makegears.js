@@ -85,8 +85,12 @@ function makeSlot(i) {
     h: 0,
     x: 0,
     y: 0,
+    // pos is where on the gear this is, and it works despite rotation to measure where on the 8 spaces it is. If the gear is mid-rotation, this is a fractional value.
+    // this doubles as a check to make it so you can't place cards on a moving gear.
+    // 0 is the center right, 1 is one clockwise movement from there, and so on till 7.
+    // this matches the order in the list for "legal slots" for cards.
     pos: i,
-    //Kai's null variable for the slot to hold a card object
+    //Kai's null variable for the slot to hold a card object, now being used for circular reference
     card: null,
     // down the line, more variables will be added
     // including one which may contain a card object
