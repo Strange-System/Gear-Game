@@ -10,7 +10,8 @@ function draw() {
   }
   lastframeidentity = player.identity
 
-  textFont(pxlFnt);
+    textFont(Fnt[player.identity]);
+  
   positionGear();
   for (let i = 0; i < gearslist.length; i++) {
   gearslist[i].personalfc++
@@ -59,7 +60,6 @@ function draw() {
     textAlign(CENTER, CENTER);
     textSize(gearslist[i].progdia/15);
     noStroke();
-    textFont(pxlFnt);
     fill (255, 255, 255);
     text(`${gearslist[i].powused}`, -gearslist[i].progdia/13, -gearslist[i].progdia/17,);
     fill (255, 128, 13);

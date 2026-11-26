@@ -21,8 +21,6 @@ let profileerrorimg;
 let selectSound;
 
 // I added a card template image you can use. :)
-let pxlFnt;
-// A pixel font
 const gearslist = [];
 // A grand list of gears. Within this list, there are objects.
 // Those objects are the gears.
@@ -30,6 +28,15 @@ const gearslist = [];
 // Within those lists, are objects. These objects are the slots.
 // Don't get overwhelmed, it sounds like a lot but I promise you can keep up.
 const cards = [];
+
+const Fnt = {
+  Tough: null,
+  Wrath: null,
+  Reason: null,
+  Creative: null,
+  Panic: null,
+  Sorrow: null,
+}
 
 const player = {
   health: 100,
@@ -82,7 +89,12 @@ async function setup() {
   Wper = width / 100;
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
-  pxlFnt = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Tough = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Wrath = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Reason = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Creative = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Panic = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Sorrow = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
   cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
   profileerrorimg = await loadImage("./assets/Profile/ProfileError.png")
