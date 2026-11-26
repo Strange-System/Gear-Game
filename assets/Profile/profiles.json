@@ -1,5 +1,8 @@
 {
   "Tough": ["Fear", "Neutral", "Broken", "BrokenFear"],
   "Panic": ["Fear", "Neutral", "Broken", "Manic"],
-  "Wrath": ["Fear", "Neutral", "Manic"]
+  "Wrath": ["Fear", "Neutral", "Manic"],
+  "Sorrow": [],
+  "Reason": [],
+  "Creative": []
 }
