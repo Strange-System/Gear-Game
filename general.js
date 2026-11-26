@@ -61,12 +61,12 @@ function draw() {
     textSize(gearslist[i].progdia/15);
     noStroke();
     fill (255, 255, 255);
-    text(`${gearslist[i].powused}`, -gearslist[i].progdia/13, -gearslist[i].progdia/17,);
+    bettertext(`${gearslist[i].powused}`, -gearslist[i].progdia/13, -gearslist[i].progdia/17,);
     fill (255, 128, 13);
-    text(`${gearslist[i].pow}`, -gearslist[i].progdia/13, gearslist[i].progdia/17,);
+    bettertext(`${gearslist[i].pow}`, -gearslist[i].progdia/13, gearslist[i].progdia/17,);
     textSize(gearslist[i].progdia/8);
     fill (35, 120, 65);
-    text(`${gearslist[i].rpt}`, gearslist[i].progdia/11, 0,);
+    bettertext(`${gearslist[i].rpt}`, gearslist[i].progdia/11, 0,);
     pop();
   pop();
     // This makes the gear slots put in the right place while being unrotated vvv

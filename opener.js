@@ -46,7 +46,7 @@ const player = {
   imageoverlay: null,
   imageoverlaytwo: null,
   heldcard: false,
-  identity: "Wrath",
+  identity: "Reason",
   broken: false
 };
 
@@ -89,12 +89,12 @@ async function setup() {
   Wper = width / 100;
   Hper = height / 100;
   GEARIMAGE = await loadImage("./assets/Gear.png");
-  Fnt.Tough = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
-  Fnt.Wrath = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Tough = await loadFont("./assets/Fonts/InstrumentSerif-Regular.ttf");
+  Fnt.Wrath = await loadFont("./assets/Fonts/Caveat/Caveat-Bold.ttf");
   Fnt.Reason = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
-  Fnt.Creative = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
-  Fnt.Panic = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
-  Fnt.Sorrow = await loadFont("./assets/Fonts/Tiny5Duo/Tiny5Duo-Bold.ttf");
+  Fnt.Creative = await loadFont("./assets/Fonts/MedievalSharp-Regular.ttf");
+  Fnt.Panic = await loadFont("./assets/Fonts/NothingYouCouldDo-Regular.ttf");
+  Fnt.Sorrow = await loadFont("./assets/Fonts/ClickerScript-Regular.ttf");
   EMPTYSLOT = await loadImage("./assets/Cards/emptyslot.png");
   cardTemplate = await loadImage("./assets/Cards/cardTemplate.png");
   profileerrorimg = await loadImage("./assets/Profile/ProfileError.png")

@@ -57,10 +57,10 @@ function renderplayerUI(health, maxHealth, statuses, playerImage) {
   textAlign(LEFT, TOP);
 
   if (statuses.length === 0) {
-    text("No Status Effects", statusX + 10/propalscl * Wper, statusY - statusH + 10/propalscl * Wper);
+    bettertext("No Status Effects", statusX + 10/propalscl * Wper, statusY - statusH + 10/propalscl * Wper);
   } else {
     for (let i = 0; i < statuses.length; i++) {
-      text(statuses[i], statusX + 10/propalscl * Wper, statusY - statusH + 8/propalscl * Wper + (i * 24/propalscl * Wper));
+      bettertext(statuses[i], statusX + 10/propalscl * Wper, statusY - statusH + 8/propalscl * Wper + (i * 24/propalscl * Wper));
     }} 
  
  // player portrait 
@@ -118,7 +118,7 @@ fill(70, 25, 25);
   fill(255);
   textSize(14);
   textAlign(LEFT, BOTTOM);
-  text("Health: " + health + " / " + maxHealth,
+  bettertext("Health: " + health + " / " + maxHealth,
        healthX, healthY - 5/propalscl * Wper);
 
   pop();

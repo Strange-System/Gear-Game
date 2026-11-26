@@ -99,7 +99,7 @@ function rendercards() {
       noStroke();
       textAlign(CENTER, CENTER);
       textSize(cards[i].w * 0.15);
-      text(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
+      bettertext(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
     }
   }
   // two separate for loops so that hand is rendered after play
@@ -126,7 +126,7 @@ function rendercards() {
       noStroke();
       textAlign(CENTER, CENTER);
       textSize(cards[i].w * 0.15);
-      text(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
+      bettertext(cards[i].title, cards[i].x, cardY-(cards[i].h * 0.4));
     }
   }
 
