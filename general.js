@@ -58,16 +58,14 @@ function draw() {
     line(0, 0, -gearslist[i].progdia/6, 0);
     textAlign(CENTER, CENTER);
     textSize(gearslist[i].progdia/15);
-    textFont(pxlFntXlight);
+    noStroke();
+    textFont(pxlFnt);
     fill (255, 255, 255);
-    stroke (255, 255, 255);
     text(`${gearslist[i].powused}`, -gearslist[i].progdia/13, -gearslist[i].progdia/17,);
     fill (255, 128, 13);
-    stroke (255, 128, 13);
     text(`${gearslist[i].pow}`, -gearslist[i].progdia/13, gearslist[i].progdia/17,);
     textSize(gearslist[i].progdia/8);
     fill (35, 120, 65);
-    stroke (35, 120, 65);
     text(`${gearslist[i].rpt}`, gearslist[i].progdia/11, 0,);
     pop();
   pop();

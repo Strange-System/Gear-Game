@@ -141,6 +141,10 @@ function rendercards() {
 
 function drawcard(i) {
 
+  if (cards[i].Tough !== null) {
+    
+  }
+
   rectMode(CENTER);
 
   push();
