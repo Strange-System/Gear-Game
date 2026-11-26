@@ -56,15 +56,15 @@ class Card {
     this.zone = "hand";
     this.title = "Card";
     this.Tough = 1;
-    this.Wrath = null;
-    this.Panic = null;
-    this.Creative = null;
-    this.Sorrow = null;
-    this.Reason = null;
+    this.Wrath = 1;
+    this.Panic = 1;
+    this.Creative = 1;
+    this.Sorrow = 1;
+    this.Reason = 1;
     this.slot = null;
     this.handX = x;
     this.handY = y;
-    this.playable = [0,0,0,0,0,0,0,0]
+    this.playable = [1,1,1,1,1,1,1,1]
   }
 
   get h() {
@@ -146,7 +146,7 @@ function drawcard(i) {
   let top = -h*2/5 + h*5/72 + w/24;
   let bottom = h*11/24 - w/24;
   let cellW = w*5/12;
-  let cellH = (bottom - top)/3;
+  let cellH = (bottom - top + .1)/3;
 
   strokeWeight(cards[i].w/12)
 
@@ -154,15 +154,60 @@ function drawcard(i) {
 
   if (cards[i].Tough !== null) {
     push();
-    strokeWeight(cards[i].w/24)
+    strokeWeight(cards[i].w/22)
     stroke('#646668');
     fill('#cccccc');
     rect(cards[i].x - cellW/2, cards[i].y + top + cellH/2, cellW - w/24, cellH - w/24)
     pop();
   }
+  
+  if (cards[i].Wrath !== null) {
+    push();
+    strokeWeight(cards[i].w/22)
+    stroke('#f90200');
+    fill('#ea9998');
+    rect(cards[i].x + cellW/2, cards[i].y + top + cellH/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
+
+  if (cards[i].Reason !== null) {
+    push();
+    strokeWeight(cards[i].w/22)
+    stroke('#9641ff');
+    fill('#b4a7d8');
+    rect(cards[i].x - cellW/2, cards[i].y + top + cellH*3/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
+
+  if (cards[i].Creative !== null) {
+    push();
+    strokeWeight(cards[i].w/22)
+    stroke('#6ba751');
+    fill('#b5d7a7');
+    rect(cards[i].x + cellW/2, cards[i].y + top + cellH*3/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
+
+  if (cards[i].Panic !== null) {
+    push();
+    strokeWeight(cards[i].w/22)
+    stroke('#f1c331');
+    fill('#ffe699');
+    rect(cards[i].x - cellW/2, cards[i].y + top + cellH*5/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
+
+  if (cards[i].Sorrow !== null) {
+    push();
+    strokeWeight(cards[i].w/22)
+    stroke('#3d77da');
+    fill('#a5c2f5');
+    rect(cards[i].x + cellW/2, cards[i].y + top + cellH*5/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
 
   push();
-  stroke(255);
+  stroke(255); 
   
   noFill();
   rect(cards[i].x, cards[i].y, cards[i].w*11/12, cards[i].h*11/12, cards[i].w/12)
