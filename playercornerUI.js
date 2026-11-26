@@ -23,7 +23,7 @@
 
 function renderplayerUI(health, maxHealth, statuses, playerImage) {
         const propalscl = 9
-        // proportional scale
+        // proportional scale. Was used to fix when the initial measurements weren't made in terms of Wper and Hper
 
         let margin= 20/propalscl * Wper; 
 
