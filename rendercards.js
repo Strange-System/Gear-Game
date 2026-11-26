@@ -55,7 +55,7 @@ class Card {
     this.w = w;
     this.zone = "hand";
     this.title = "Card";
-    this.Tough = null;
+    this.Tough = 1;
     this.Wrath = null;
     this.Panic = null;
     this.Creative = null;
@@ -141,31 +141,37 @@ function rendercards() {
 
 function drawcard(i) {
 
-  if (cards[i].Tough !== null) {
-    
-  }
+  let w = cards[i].w;
+  let h = cards[i].h;
+  let top = -h*2/5 + h*5/72 + w/24;
+  let bottom = h*11/24 - w/24;
+  let cellW = w*5/12;
+  let cellH = (bottom - top)/3;
+
+  strokeWeight(cards[i].w/12)
 
   rectMode(CENTER);
 
+  if (cards[i].Tough !== null) {
+    push();
+    strokeWeight(cards[i].w/24)
+    stroke('#646668');
+    fill('#cccccc');
+    rect(cards[i].x - cellW/2, cards[i].y + top + cellH/2, cellW - w/24, cellH - w/24)
+    pop();
+  }
+
   push();
   stroke(255);
-  strokeWeight(cards[i].w/12)
+  
   noFill();
-  rect(cards[i].x, cards[i].y, cards[i].w*23/24, cards[i].h*23/24, cards[i].w/12)
+  rect(cards[i].x, cards[i].y, cards[i].w*11/12, cards[i].h*11/12, cards[i].w/12)
   pop();
 
   push();
   stroke(255);
-  strokeWeight(cards[i].w/12)
   fill(255);
-  rect(cards[i].x, cards[i].y-(cards[i].h*2/5), cards[i].w*23/24, cards[i].h*23/160, cards[i].w/12)
+  rect(cards[i].x, cards[i].y-(cards[i].h*2/5), cards[i].w*11/12, cards[i].h*5/36, cards[i].w/12)
+  
   pop();
-
-  // image(
-  //  cards[i].image,
-  //  cards[i].x,
-  //  cardY,
-  //  cards[i].w,
-  //  cards[i].h
-  // );
 }
