@@ -69,9 +69,9 @@ function bettertext(str, x, y, maxWidth, maxHeight, dofit) {
     textSize(finalSize);
 
     if (textAlign().horizontal === CENTER) {
-        text(str, x+xoff, y+yoff, maxWidth, maxHeight);
+        text(str, x+xoff, y+yoff, maxWidth);
     } else {
-        text(str, x, y, maxWidth, maxHeight);
+        text(str, x, y, maxWidth);
     }
     pop();
 }

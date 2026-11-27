@@ -55,7 +55,7 @@ class Card {
     this.w = w;
     this.zone = "hand";
     this.title = "Card";
-    this.Tough = 1;
+    this.Tough = "test";
     this.Wrath = 1;
     this.Panic = 1;
     this.Creative = 1;
@@ -93,6 +93,7 @@ function rendercards() {
         cardY -= 3 * Hper;
       }
 
+      textSize(cards[i].w * 0.15);
       drawcard(i);
 
       fill(0);
@@ -119,7 +120,8 @@ function rendercards() {
       if (selectedCard === i) {
         cardY -= 3 * Hper;
       }
-
+      
+      textSize(cards[i].w * 0.15);
       drawcard(i);
 
       fill(0);
@@ -151,6 +153,7 @@ function drawcard(i) {
   strokeWeight(cards[i].w/12)
 
   rectMode(CENTER);
+  textAlign(CENTER, CENTER);
 
   if (cards[i].Tough !== null) {
     push();
@@ -158,6 +161,9 @@ function drawcard(i) {
     stroke('#646668');
     fill('#cccccc');
     rect(cards[i].x - cellW/2, cards[i].y + top + cellH/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Tough), cards[i].x - cellW/2.1, cards[i].y + top + cellH/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
   
