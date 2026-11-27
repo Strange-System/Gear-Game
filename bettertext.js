@@ -1,4 +1,4 @@
-function bettertext(str, x, y, maxWidth, maxHeight) {
+function bettertext(str, x, y, maxWidth, maxHeight, dofit) {
     push();
     let xoff = 0
     let yoff = 0
@@ -13,7 +13,7 @@ function bettertext(str, x, y, maxWidth, maxHeight) {
     }
     if (player.identity === "Creative") {
         xoff = Wper*txts*-1/200
-        yoff = Wper*txts*+1/60
+        yoff = Wper*txts*1/60
     }
     if (player.identity === "Wrath") {
         xoff = Wper*txts*-1/80
@@ -25,7 +25,49 @@ function bettertext(str, x, y, maxWidth, maxHeight) {
         yoff = Wper*txts*-1/200
         txtm = 1.1
     }
-    textSize(txts*txtm)
+    
+    let finalSize = txts * txtm;
+
+    if (dofit && maxWidth > 0 && maxHeight > 0 && String(str).length > 0) {
+        textWrap(WORD);
+
+        function fits(size) {
+            textSize(size);
+            let bounds = textBounds(String(str), 0, 0, maxWidth);
+
+            return bounds.w <= maxWidth &&
+                   bounds.h <= maxHeight;
+        }
+
+        let low = 0;
+        let high = Math.max(1, finalSize);
+
+        // Find the upper limit of a fitting size
+        while (fits(high) && high < 4096) {
+            high *= 2;
+        }
+
+        // Binary search for the largest fitting size
+        for (let i = 0; i < 15; i++) {
+            let mid = (low + high) / 2;
+
+            if (fits(mid)) {
+                low = mid;
+            } else {
+                high = mid;
+            }
+        }
+
+        // Adjust offsets to match the fitted font size
+        let scale = low / finalSize;
+        xoff *= scale;
+        yoff *= scale;
+
+        finalSize = low;
+    }
+
+    textSize(finalSize);
+
     if (textAlign().horizontal === CENTER) {
         text(str, x+xoff, y+yoff, maxWidth, maxHeight);
     } else {

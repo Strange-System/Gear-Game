@@ -237,7 +237,7 @@ function drawcard(i) {
   }
   push();
   translate(cards[i].w*11/23, cards[i].h*7/15);
-  const xof = cards[i].w*11/23
+  const xof = cards[i].w*12/23
   const yof = cards[i].h*7/15
   rotate(45);
   triangle(cards[i].w*10/24-xof, cards[i].h*7/15-yof, cards[i].w*13/24-xof, cards[i].h*8/15-yof, cards[i].w*13/24-xof, cards[i].h*6/15-yof)
