@@ -173,6 +173,9 @@ function drawcard(i) {
     stroke('#f90200');
     fill('#ea9998');
     rect(cards[i].x + cellW/2, cards[i].y + top + cellH/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Wrath), cards[i].x + cellW/1.9, cards[i].y + top + cellH/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
 
@@ -182,6 +185,9 @@ function drawcard(i) {
     stroke('#9641ff');
     fill('#b4a7d8');
     rect(cards[i].x - cellW/2, cards[i].y + top + cellH*3/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Reason), cards[i].x - cellW/2.1, cards[i].y + top + cellH*3/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
 
@@ -191,6 +197,9 @@ function drawcard(i) {
     stroke('#6ba751');
     fill('#b5d7a7');
     rect(cards[i].x + cellW/2, cards[i].y + top + cellH*3/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Creative), cards[i].x + cellW/1.9, cards[i].y + top + cellH*3/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
 
@@ -200,6 +209,9 @@ function drawcard(i) {
     stroke('#f1c331');
     fill('#ffe699');
     rect(cards[i].x - cellW/2, cards[i].y + top + cellH*5/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Panic), cards[i].x - cellW/2.1, cards[i].y + top + cellH*5/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
 
@@ -209,6 +221,9 @@ function drawcard(i) {
     stroke('#3d77da');
     fill('#a5c2f5');
     rect(cards[i].x + cellW/2, cards[i].y + top + cellH*5/2, cellW - w/24, cellH - w/24)
+    noStroke();
+    fill('#000000');
+    bettertext(String(cards[i].Sorrow), cards[i].x + cellW/1.9, cards[i].y + top + cellH*5/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
 
