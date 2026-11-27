@@ -64,7 +64,8 @@ class Card {
     this.slot = null;
     this.handX = x;
     this.handY = y;
-    this.playable = [1,1,1,1,1,1,1,1]
+    this.playable = [1,1,1,1,1,1,1,1];
+    this.energy = 0;
   }
 
   get h() {
@@ -226,6 +227,12 @@ function drawcard(i) {
     bettertext(String(cards[i].Sorrow), cards[i].x + cellW/1.9, cards[i].y + top + cellH*5/2, (cellW - w/24 - cards[i].w/10), (cellH - w/24 - cards[i].h/10), true)
     pop();
   }
+
+
+  push();
+  // energy cost display code goes here
+  pop();
+
 
   push();
   stroke(255); 
