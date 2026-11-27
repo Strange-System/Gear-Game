@@ -217,6 +217,91 @@ function drawcard(i) {
   stroke(255);
   fill(255);
   rect(cards[i].x, cards[i].y-(cards[i].h*2/5), cards[i].w*11/12, cards[i].h*5/36, cards[i].w/12)
-  
+  pop();
+
+  push();
+  strokeWeight(cards[i].w/50)
+  stroke('#646668');
+  if (cards[i].playable[0] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  translate(cards[i].x, cards[i].y);
+  triangle(cards[i].w*10/24, 0, cards[i].w*13/24, cards[i].h*1/15, cards[i].w*13/24, -cards[i].h*1/15)
+
+  if (cards[i].playable[1] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  push();
+  translate(cards[i].w*11/23, cards[i].h*7/15);
+  const xof = cards[i].w*11/23
+  const yof = cards[i].h*7/15
+  rotate(45);
+  triangle(cards[i].w*10/24-xof, cards[i].h*7/15-yof, cards[i].w*13/24-xof, cards[i].h*8/15-yof, cards[i].w*13/24-xof, cards[i].h*6/15-yof)
+  pop();
+
+  if (cards[i].playable[2] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  triangle(0, cards[i].h*10.5/24, cards[i].w*1/12, cards[i].h*13/24, -cards[i].w*1/12, cards[i].h*13/24)
+
+  if (cards[i].playable[3] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  push();
+  scale(-1, 1);
+  translate(cards[i].w*11/23, cards[i].h*7/15);
+  rotate(45);
+  triangle(cards[i].w*10/24-xof, cards[i].h*7/15-yof, cards[i].w*13/24-xof, cards[i].h*8/15-yof, cards[i].w*13/24-xof, cards[i].h*6/15-yof)
+  pop();
+
+
+  rotate(180);
+
+  if (cards[i].playable[4] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  triangle(cards[i].w*10/24, 0, cards[i].w*13/24, cards[i].h*1/15, cards[i].w*13/24, -cards[i].h*1/15)
+
+  if (cards[i].playable[5] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  push();
+  translate(cards[i].w*11/23, cards[i].h*7/15);
+  rotate(45);
+  triangle(cards[i].w*10/24-xof, cards[i].h*7/15-yof, cards[i].w*13/24-xof, cards[i].h*8/15-yof, cards[i].w*13/24-xof, cards[i].h*6/15-yof)
+  pop();
+
+  if (cards[i].playable[6] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  triangle(0, cards[i].h*10.5/24, cards[i].w*1/12, cards[i].h*13/24, -cards[i].w*1/12, cards[i].h*13/24)
+
+  if (cards[i].playable[7] == false) {
+    fill('#c4c4c4');
+  } else {
+    fill('#f6040a');
+  }
+  push();
+  scale(-1, 1);
+  translate(cards[i].w*11/23, cards[i].h*7/15);
+  rotate(45);
+  triangle(cards[i].w*10/24-xof, cards[i].h*7/15-yof, cards[i].w*13/24-xof, cards[i].h*8/15-yof, cards[i].w*13/24-xof, cards[i].h*6/15-yof)
+  pop();
+
+  translate();
   pop();
 }
