@@ -237,7 +237,7 @@ function drawcard(i) {
   push();
   stroke(255); 
   
-  noFill();
+  noFill(); 
   rect(cards[i].x, cards[i].y, cards[i].w*11/12, cards[i].h*11/12, cards[i].w/12)
   pop();
 
